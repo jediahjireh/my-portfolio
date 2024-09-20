@@ -23,7 +23,7 @@ export default function Portfolio() {
 
   return (
     <div className="relative min-h-screen bg-black/[0.96] text-white overflow-hidden">
-      {/* large sqaure background grid */}
+      {/* large square background grid */}
       <div className="absolute inset-0 -bottom-72">
         <Image
           src="/grid.svg"
