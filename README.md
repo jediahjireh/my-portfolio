@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Portfolio
 
-## Getting Started
+Welcome to my personal portfolio repository!
 
-First, run the development server:
+<!-- TOC -->
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [My Portfolio](#my-portfolio)
+  - [Features](#features)
+  - [Technologies](#technologies)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Customisation](#customisation)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Dynamic UI**: Created using React and Next.js, with smooth animations powered by Framer Motion.
+- **Custom Layout**: A unique spotlight effect and custom sections for: About, Skills, Projects, Contact.
+- **Responsive Design**: Fully responsive for a seamless experience across all devices.
+- **Contact Form**: Includes a custom contact form with animations and error handling.
+- **Skills Tabs**: Tabs to showcase skills.
+- **Projects Section**: A dedicated section to display a variety of projects with spotlight and animation effects.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies
 
-## Learn More
+- **Framework**: [Next.js](https://nextjs.org)
+- **UI Components**: [Tailwind CSS](https://tailwindcss.com), [React Bootstrap](https://react-bootstrap.github.io)
+- **Animations**: [Framer Motion](https://www.framer.com/motion)
+- **Icons**: [Lucide Icons](https://lucide.dev)
+- **Images**: [Next.js Image Component](https://nextjs.org/docs/api-reference/next/image)
 
-To learn more about Next.js, take a look at the following resources:
+## Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To run this project locally:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone this repository:
 
-## Deploy on Vercel
+   ```zsh
+   git clone https://github.com/jediahjireh/my-portfolio.git
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Install dependencies:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```zsh
+   npm install
+   ```
+
+3. Run the development server:
+
+   ```zsh
+   npm run dev
+   ```
+
+4. Open the [default localhost](http://localhost:3000) to view it in the browser.
+
+## Usage
+
+- Navigate through sections such as **About**, **Skills**, **Projects** **Contact**.
+- Use the Contact form to send a message.
+- Explore the **Skills** section through the interactive tabs.
+
+## Customisation
+
+You can easily modify the content:
+
+- **Name and Bio**: Update the header and About section.
+- **Skills**: Add or remove skills in the Tabs section.
+- **Projects**: Modify the projects displayed in the Projects section.
+- **Contact details**: Switch out my contact card image and name on the contact form for yours. Include your own `NEXT_PUBLIC_ACCESS_KEY` in a `.env` file from [Web3Forms](https://web3forms.com/platforms/nextjs-contact-form).
