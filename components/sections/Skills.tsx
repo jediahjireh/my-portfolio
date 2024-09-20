@@ -91,10 +91,7 @@ export default function Skills() {
             <CardContent className="space-y-2 pt-4">
               <div>
                 {writings.map((writing, index) => (
-                  <span key={index}>
-                    {writing}
-                    {index < writings.length - 1 && " | "}
-                  </span>
+                  <span key={index}>{writing}</span>
                 ))}
               </div>
             </CardContent>

@@ -19,7 +19,7 @@ export default function ContactForm() {
   const [fireConfetti, setFireConfetti] = useState<boolean>(false);
 
   // get the access key from the .env file
-  const accessKey = process.env.NEXT_PUBLIC_ACCESS_KEY;
+  const accessKey = process.env.ACCESS_KEY;
 
   // handle form submission
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {

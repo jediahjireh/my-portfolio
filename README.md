@@ -10,6 +10,7 @@ Welcome to my personal portfolio repository!
   - [Installation](#installation)
   - [Usage](#usage)
   - [Customisation](#customisation)
+  - [To do](#to-do)
 
 ## Features
 
@@ -65,4 +66,8 @@ You can easily modify the content:
 - **Name and Bio**: Update the header and About section.
 - **Skills**: Add or remove skills in the Tabs section.
 - **Projects**: Modify the projects displayed in the Projects section.
-- **Contact details**: Switch out my contact card image and name on the contact form for yours. Include your own `NEXT_PUBLIC_ACCESS_KEY` in a `.env` file from [Web3Forms](https://web3forms.com/platforms/nextjs-contact-form).
+- **Contact details**: Switch out my contact card image and name on the contact form for yours. Include your own `ACCESS_KEY` in a `.env` file from [Web3Forms](https://web3forms.com/platforms/nextjs-contact-form).
+
+## To do
+
+- [ ] Add a smaller grid background in [page.tsx](/app/page.tsx), behind the [Hero](/components/sections/Hero.tsx) (but below the lamp's light source) and stopping just before the [About](/components/sections/About.tsx) content. Ideally, it should extend to behind the [About](/components/sections/About.tsx) section heading.

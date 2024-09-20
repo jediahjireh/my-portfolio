@@ -43,6 +43,9 @@ export default function Portfolio() {
             <Hero />
           </motion.div>
         </LampContainer>
+
+        {/* add smaller grid background here */}
+
         <About />
         <Projects />
         <Skills />
