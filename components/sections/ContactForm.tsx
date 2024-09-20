@@ -94,6 +94,7 @@ export default function ContactForm() {
                   <span className="ml-1">
                     <MessageCircleHeart className="w-4 h-4" />
                   </span>
+                  <p>form under construction. email me directly, please.</p>
                 </h3>
               </div>
             </div>

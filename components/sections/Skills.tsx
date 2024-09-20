@@ -5,37 +5,33 @@ import Spotlight from "../containers/Spotlight";
 
 export default function Skills() {
   const technologies = [
-    "HTML5",
-    "React.js",
     "JavaScript",
-    "Jest",
-    "JSON",
-    "CSS/SCSS",
-    "Express.js",
-    "Mongoose ODM",
-    "Mocha",
-    "XAMPP",
-    "PHP",
-    "Java",
+    "CSS",
     "MongoDB",
-    "Git/GitHub",
+    "MySQL",
+    "React.js",
+    "HTML",
+    "Express.js",
+    "SCSS",
+    "Tailwind CSS",
+    "PHP",
+    "WordPress",
+    "Java",
+    "Laravel",
     "Docker",
     "Node.js",
-    "WordPress",
-    "Laravel",
-    "jQuery",
     "Vite.js",
     "Next.js",
-    "Tailwind CSS",
     "TypeScript",
-    "Postman",
+    "Prisma",
   ];
 
   const writings = [
     "Technical Writing",
-    "Creative Writing",
-    "Content Creation",
     "Blogging",
+    "Content Creation",
+    "Editing",
+    "Creative Writing",
     "Copywriting",
   ];
 
@@ -58,15 +54,15 @@ export default function Skills() {
       </div>
       <Tabs defaultValue="web" className="w-full text-center">
         <TabsList className="grid w-full grid-cols-3 bg-red-500 text-white">
-          <TabsTrigger value="web" className="hover:bg-red-600">
+          <TabsTrigger value="web" className="hover:bg-red-600 mb-2">
             <Code className="mr-2 h-4 w-4" />
             Web Development
           </TabsTrigger>
-          <TabsTrigger value="writing" className="hover:bg-red-600">
+          <TabsTrigger value="writing" className="hover:bg-red-600 mb-2">
             <Pen className="mr-2 h-4 w-4" />
             Writing
           </TabsTrigger>
-          <TabsTrigger value="design" className="hover:bg-red-600">
+          <TabsTrigger value="design" className="hover:bg-red-600 mb-2">
             <PenTool className="mr-2 h-4 w-4" />
             Graphic Design
           </TabsTrigger>
@@ -74,12 +70,18 @@ export default function Skills() {
         <TabsContent value="web" className="mt-4">
           {/* tab content */}
           <Card className="bg-black/[0.96] text-white">
-            <CardContent className="space-y-2 pt-4">
-              <div>
+            <CardContent className="space-y-5 pt-4">
+              <div className="flex justify-center flex-wrap gap-2">
                 {technologies.map((technology, index) => (
-                  <span key={index}>
+                  <span
+                    key={index}
+                    className={`px-4 py-2 text-white rounded-full ${
+                      index % 2 === 0
+                        ? "bg-red-600 animate-slow-bounce"
+                        : "bg-red-400 animate-slow-spin"
+                    }`}
+                  >
                     {technology}
-                    {index < technologies.length - 1 && " | "}
                   </span>
                 ))}
               </div>
@@ -88,10 +90,19 @@ export default function Skills() {
         </TabsContent>
         <TabsContent value="writing" className="mt-4">
           <Card className="bg-black/[0.96] text-white">
-            <CardContent className="space-y-2 pt-4">
-              <div>
+            <CardContent className="space-y-5 pt-4">
+              <div className="flex justify-center flex-wrap gap-2">
                 {writings.map((writing, index) => (
-                  <span key={index}>{writing}</span>
+                  <span
+                    key={index}
+                    className={`px-4 py-2 text-white rounded-full ${
+                      index % 2 === 0
+                        ? "bg-red-600 animate-slow-bounce"
+                        : "bg-red-400 animate-slow-spin"
+                    }`}
+                  >
+                    {writing}
+                  </span>
                 ))}
               </div>
             </CardContent>
@@ -99,12 +110,18 @@ export default function Skills() {
         </TabsContent>
         <TabsContent value="design" className="mt-4">
           <Card className="bg-black/[0.96] text-white">
-            <CardContent className="space-y-2 pt-4">
-              <div>
+            <CardContent className="space-y-5 pt-4">
+              <div className="flex justify-center flex-wrap gap-2">
                 {designs.map((design, index) => (
-                  <span key={index}>
+                  <span
+                    key={index}
+                    className={`px-4 py-2 text-white rounded-full ${
+                      index % 2 === 0
+                        ? "bg-red-600 animate-slow-bounce"
+                        : "bg-red-400 animate-slow-spin"
+                    }`}
+                  >
                     {design}
-                    {index < designs.length - 1 && " | "}
                   </span>
                 ))}
               </div>
