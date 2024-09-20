@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import Spotlight from "../containers/Spotlight";
+import Link from "next/link";
 
 // define the project type
 interface Project {
@@ -185,10 +186,12 @@ export default function Projects() {
                   <Button
                     size="sm"
                     className="bg-red-500 hover:bg-red-600"
-                    onClick={() => window.open(project.githubLink, "_blank")}
+                    asChild
                   >
-                    <Github className="mr-2 h-4 w-4" />
-                    View Code
+                    <Link href={project.githubLink}>
+                      <Github className="mr-2 h-4 w-4" />
+                      View Code
+                    </Link>
                   </Button>
                 )}
                 {project.demoLink && (
@@ -196,10 +199,12 @@ export default function Projects() {
                     size="sm"
                     variant="outline"
                     className="text-red-400 border-red-400 hover:bg-red-400 hover:text-white"
-                    onClick={() => window.open(project.demoLink, "_blank")}
+                    asChild
                   >
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Live Demo
+                    <Link href={project.demoLink}>
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Live Demo
+                    </Link>
                   </Button>
                 )}
               </div>

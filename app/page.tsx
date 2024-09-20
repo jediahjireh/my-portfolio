@@ -24,16 +24,17 @@ export default function Portfolio() {
   return (
     <div className="relative min-h-screen bg-black/[0.96] text-white overflow-hidden">
       {/* large square background grid */}
-      <div className="absolute inset-0 -bottom-72">
+      <div className="absolute inset-0 -bottom-72 z-5">
         <Image
           src="/grid.svg"
           alt="grid"
           className="w-full h-full object-cover opacity-50"
-          width={250}
-          height={250}
+          width={1000}
+          height={1000}
         />
       </div>
-      <main className="container mx-auto px-4 py-8">
+
+      <main className="relative z-0 container mx-auto px-4 py-8">
         <LampContainer>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -44,8 +45,16 @@ export default function Portfolio() {
           </motion.div>
         </LampContainer>
 
-        {/* add smaller grid background here */}
-
+        {/* smaller grid background if needed */}
+        <div className="w-full absolute left-0 -bottom-72 max-h-max">
+          <Image
+            src="/grid.svg"
+            alt="grid"
+            className="w-full h-full opacity-50"
+            width={250}
+            height={250}
+          />
+        </div>
         <About />
         <Projects />
         <Skills />
