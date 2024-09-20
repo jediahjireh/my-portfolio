@@ -1,5 +1,5 @@
 import Spotlight from "@/components/containers/Spotlight";
-import { Mic, Mic2, Music } from "lucide-react";
+import { Mic2 } from "lucide-react";
 
 export default function About() {
   return (

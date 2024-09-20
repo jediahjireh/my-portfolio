@@ -1,7 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function Lamp({ children, className = "" }) {
+interface LampProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+export default function Lamp({ children, className = "" }: LampProps) {
   return (
     <div
       className={`relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-black w-full z-0 ${className}`}

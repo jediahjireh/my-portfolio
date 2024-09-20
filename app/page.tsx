@@ -1,12 +1,10 @@
 "use client";
 import React from "react";
 import { useState, useEffect } from "react";
-import Navbar from "@/components/sections/Navbar";
 import LampContainer from "@/components/containers/Lamp";
 import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
 import ContactForm from "@/components/sections/ContactForm";
-import Footer from "@/components/sections/Footer";
 import { motion } from "framer-motion";
 import Spotlight from "@/components/containers/Spotlight";
 import About from "@/components/sections/About";
