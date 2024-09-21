@@ -1,21 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
 
-export const PinContainer = ({
-  title,
-  containerClassName,
-}: {
-  title?: string;
-  containerClassName?: string;
-}) => {
+export const PinContainer = ({ title }: { title?: string }) => {
   return (
-    <div
-      className={cn(
-        "relative group/pin z-50 cursor-pointer",
-        containerClassName
-      )}
-    >
+    <div className="relative group/pin z-50 cursor-pointer">
       <PinPerspective title={title} />
     </div>
   );

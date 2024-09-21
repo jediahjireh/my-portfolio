@@ -133,6 +133,7 @@ export default function Skills() {
       {/* smaller grid background for contact form prompt */}
       <div className="w-full absolute left-0 -bottom-13 max-h-max z-50">
         <Image
+          priority
           src="/grid.svg"
           alt="grid"
           className="w-full h-full opacity-50"

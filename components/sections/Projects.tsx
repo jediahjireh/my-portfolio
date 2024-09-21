@@ -172,6 +172,7 @@ export default function Projects() {
                 alt={project.title}
                 width={300}
                 height={200}
+                style={{ width: "auto", height: "100%" }}
                 className="rounded-lg object-cover"
               />
               <Spotlight>

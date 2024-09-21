@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
         className={`p-2 ${geistSans.variable} ${geistMono.variable} ${lavishlyYours.variable} antialiased`}
       >

@@ -26,6 +26,7 @@ export default function Portfolio() {
       {/* large square background grid */}
       <div className="absolute inset-0 -bottom-72 z-5">
         <Image
+          priority
           src="/grid.svg"
           alt="grid"
           className="w-full h-full object-cover opacity-50"

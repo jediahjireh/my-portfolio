@@ -15,6 +15,7 @@ export default function Lamp({ children, className = "" }: LampProps) {
       {/* smaller grid background */}
       <div className="w-full absolute left-0 -bottom-60 max-h-max z-30">
         <Image
+          priority
           src="/grid.svg"
           alt="grid"
           className="w-full h-full opacity-50"
