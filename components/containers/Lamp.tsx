@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface LampProps {
   children: React.ReactNode;
@@ -11,6 +12,17 @@ export default function Lamp({ children, className = "" }: LampProps) {
     <div
       className={`relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-black w-full z-0 ${className}`}
     >
+      {/* smaller grid background */}
+      <div className="w-full absolute left-0 -bottom-60 max-h-max z-30">
+        <Image
+          src="/grid.svg"
+          alt="grid"
+          className="w-full h-full opacity-50"
+          width={250}
+          height={250}
+        />
+      </div>
+
       <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0 ">
         <motion.div
           initial={{ opacity: 0.5, width: "15rem" }}

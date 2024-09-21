@@ -70,4 +70,4 @@ You can easily modify the content:
 
 ## To do
 
-- [ ] Add a smaller grid background in [page.tsx](/app/page.tsx), behind the [Hero](/components/sections/Hero.tsx) (but below the lamp's light source) and stopping just before the [About](/components/sections/About.tsx) content. Ideally, it should extend to behind the [About](/components/sections/About.tsx) section heading.
+- [x] Add a smaller grid background in [page.tsx](/app/page.tsx), behind the [Hero](/components/sections/Hero.tsx) (but below the lamp's light source) and stopping just before the [About](/components/sections/About.tsx) content. Ideally, it should extend to behind the [About](/components/sections/About.tsx) section heading.

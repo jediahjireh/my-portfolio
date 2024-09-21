@@ -15,6 +15,11 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const lavishlyYours = localFont({
+  src: "./fonts/LavishlyYours-Regular.ttf",
+  variable: "--font-lavishly-yours",
+  weight: "10000 19000",
+});
 
 export const metadata: Metadata = {
   title: "Jediah's Portfolio",
@@ -29,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`p-2 ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`p-2 ${geistSans.variable} ${geistMono.variable} ${lavishlyYours.variable} antialiased`}
       >
         <Toaster />
         <Navbar />

@@ -58,8 +58,12 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       animation: {
+        // custom animation for skills "badges"
         "slow-bounce": "bounce 6s infinite",
         "slow-spin": "spin 18s infinite linear",
+      },
+      fontFamily: {
+        lavishly: ["var(--font-lavishly-yours)", "cursive"],
       },
     },
   },

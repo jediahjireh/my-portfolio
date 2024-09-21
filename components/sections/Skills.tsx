@@ -2,6 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Code, Pen, PenTool } from "lucide-react";
 import Spotlight from "../containers/Spotlight";
+import Image from "next/image";
 
 export default function Skills() {
   const technologies = [
@@ -45,13 +46,13 @@ export default function Skills() {
 
   return (
     <section id="skills" className="py-12 md:py-24 lg:py-32">
-      <div className="text-center mb-8">
+      <header className="text-center mb-8">
         <Spotlight>
           <h2 className="text-3xl mb-8 font-bold tracking-tighter sm:text-4xl md:text-5xl">
             code is poetry.
           </h2>
         </Spotlight>
-      </div>
+      </header>
       <Tabs defaultValue="web" className="w-full text-center">
         <TabsList className="grid w-full grid-cols-3 bg-red-500 text-white">
           <TabsTrigger value="web" className="hover:bg-red-600 mb-2">
@@ -75,10 +76,10 @@ export default function Skills() {
                 {technologies.map((technology, index) => (
                   <span
                     key={index}
-                    className={`px-4 py-2 text-white rounded-full ${
+                    className={`px-4 py-2 text-white rounded-full hover:cursor-grab ${
                       index % 2 === 0
-                        ? "bg-red-600 animate-slow-bounce"
-                        : "bg-red-400 animate-slow-spin"
+                        ? "bg-red-600 animate-slow-bounce hover:bg-red-700"
+                        : "bg-red-400 animate-slow-spin hover:bg-red-500"
                     }`}
                   >
                     {technology}
@@ -95,10 +96,10 @@ export default function Skills() {
                 {writings.map((writing, index) => (
                   <span
                     key={index}
-                    className={`px-4 py-2 text-white rounded-full ${
+                    className={`px-4 py-2 text-white rounded-full hover:cursor-grab ${
                       index % 2 === 0
-                        ? "bg-red-600 animate-slow-bounce"
-                        : "bg-red-400 animate-slow-spin"
+                        ? "bg-red-600 animate-slow-bounce hover:bg-red-700"
+                        : "bg-red-400 animate-slow-spin hover:bg-red-500"
                     }`}
                   >
                     {writing}
@@ -115,10 +116,10 @@ export default function Skills() {
                 {designs.map((design, index) => (
                   <span
                     key={index}
-                    className={`px-4 py-2 text-white rounded-full ${
+                    className={`px-4 py-2 text-white rounded-full hover:cursor-grab ${
                       index % 2 === 0
-                        ? "bg-red-600 animate-slow-bounce"
-                        : "bg-red-400 animate-slow-spin"
+                        ? "bg-red-600 animate-slow-bounce hover:bg-red-700"
+                        : "bg-red-400 animate-slow-spin hover:bg-red-500"
                     }`}
                   >
                     {design}
@@ -129,6 +130,16 @@ export default function Skills() {
           </Card>
         </TabsContent>
       </Tabs>
+      {/* smaller grid background for contact form prompt */}
+      <div className="w-full absolute left-0 -bottom-13 max-h-max z-50">
+        <Image
+          src="/grid.svg"
+          alt="grid"
+          className="w-full h-full opacity-50"
+          width={250}
+          height={250}
+        />
+      </div>
     </section>
   );
 }

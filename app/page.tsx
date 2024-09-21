@@ -45,16 +45,6 @@ export default function Portfolio() {
           </motion.div>
         </LampContainer>
 
-        {/* smaller grid background if needed */}
-        <div className="w-full absolute left-0 -bottom-72 max-h-max">
-          <Image
-            src="/grid.svg"
-            alt="grid"
-            className="w-full h-full opacity-50"
-            width={250}
-            height={250}
-          />
-        </div>
         <About />
         <Projects />
         <Skills />

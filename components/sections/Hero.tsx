@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="relative flex flex-col space-y-4 items-center text-center text-white">
+    <header className="relative flex flex-col space-y-4 items-center text-center text-white">
       <Spotlight>
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none">
           Jediah Jireh Naicker
@@ -24,6 +24,6 @@ export default function Hero() {
       <p className="italic mx-auto max-w-[700px] text-base md:text-lg">
         Crafting digital experiences with code, words and visuals.
       </p>
-    </div>
+    </header>
   );
 }

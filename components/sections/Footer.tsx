@@ -16,7 +16,7 @@ export default function Footer() {
             GitHub
           </Link>
           <Link
-            href="https://www.linkedin.com/in/jediahnaicker"
+            href="https://www.linkedin.com/in/jediahjireh"
             className="hover:text-red-400"
           >
             LinkedIn

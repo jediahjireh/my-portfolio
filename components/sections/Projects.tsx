@@ -1,9 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Spotlight from "../containers/Spotlight";
 import Link from "next/link";
+import { GrGithub } from "react-icons/gr";
 
 // define the project type
 interface Project {
@@ -146,7 +147,7 @@ const projects: Project[] = [
 export default function Projects() {
   return (
     <section id="projects" className="py-12 md:py-24 lg:py-32">
-      <div className="text-center mb-8">
+      <header className="text-center mb-8">
         <Spotlight>
           <h2 className="text-3xl mb-6 font-bold tracking-tighter sm:text-4xl md:text-5xl">
             my digital artwork
@@ -162,7 +163,7 @@ export default function Projects() {
             </Spotlight>
           </blockquote>
         </div>
-      </div>
+      </header>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
@@ -189,7 +190,7 @@ export default function Projects() {
                     asChild
                   >
                     <Link href={project.githubLink}>
-                      <Github className="mr-2 h-4 w-4" />
+                      <GrGithub className="mr-2 h-4 w-4" />
                       View Code
                     </Link>
                   </Button>
