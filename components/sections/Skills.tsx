@@ -1,8 +1,8 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import { Code, Pen, PenTool } from "lucide-react";
 import Spotlight from "../containers/Spotlight";
 import Image from "next/image";
+import { TbHeartCode, TbPencilHeart, TbPhotoHeart } from "react-icons/tb";
 
 export default function Skills() {
   const technologies = [
@@ -53,22 +53,22 @@ export default function Skills() {
           </h2>
         </Spotlight>
       </header>
-      <Tabs defaultValue="web" className="w-full text-center">
+      <Tabs defaultValue="development" className="w-full text-center">
         <TabsList className="grid w-full grid-cols-3 bg-red-500 text-white">
-          <TabsTrigger value="web" className="hover:bg-red-600 mb-2">
-            <Code className="mr-2 h-4 w-4" />
-            Web Development
+          <TabsTrigger value="development" className="hover:bg-red-600 mb-2">
+            <TbHeartCode className="mr-2 h-4 w-4" />
+            Development
           </TabsTrigger>
           <TabsTrigger value="writing" className="hover:bg-red-600 mb-2">
-            <Pen className="mr-2 h-4 w-4" />
+            <TbPencilHeart className="mr-2 h-4 w-4" />
             Writing
           </TabsTrigger>
           <TabsTrigger value="design" className="hover:bg-red-600 mb-2">
-            <PenTool className="mr-2 h-4 w-4" />
-            Graphic Design
+            <TbPhotoHeart className="mr-2 h-4 w-4" />
+            Design
           </TabsTrigger>
         </TabsList>
-        <TabsContent value="web" className="mt-4">
+        <TabsContent value="development" className="mt-4">
           {/* tab content */}
           <Card className="bg-black/[0.96] text-white">
             <CardContent className="space-y-5 pt-4">

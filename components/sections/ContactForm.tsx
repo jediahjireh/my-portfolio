@@ -6,13 +6,13 @@ import { sendEmail } from "@/lib/send-email";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MessageCircleHeart } from "lucide-react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { PinContainer } from "../ui/3d-pin";
 import Spotlight from "../containers/Spotlight";
 import Confetti from "../ui/Confetti";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 export type FormData = {
   name: string;
@@ -25,6 +25,10 @@ const ContactForm: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [fireConfetti, setFireConfetti] = useState<boolean>(false);
 
+  // define functions to handle modal state
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
+
   // handle form submission using sendEmail
   const onSubmit = async (data: FormData) => {
     const result = await sendEmail(data);
@@ -36,7 +40,7 @@ const ContactForm: FC = () => {
       // reset form fields
       reset();
       // close modal
-      setIsOpen(false);
+      closeModal();
     } else {
       toast.error("Message could not be sent. Please retry :(");
       console.log(result.message);
@@ -48,28 +52,20 @@ const ContactForm: FC = () => {
       <header className="text-center">
         <Spotlight>
           <h2 className="relative z-50 text-3xl mb-10 font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            get in touch
+            get in touch!
           </h2>
         </Spotlight>
       </header>
 
       <main className="z-10">
         {!isOpen && (
-          <div onClick={() => setIsOpen(true)}>
-            <PinContainer title="click to email me!" href="#contact">
-              <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]">
-                <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-red-500 via-red-700 to-rose-600 justify-center items-center">
-                  <h3 className="flex max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100 text-center">
-                    <span>contact me</span>
-                    <span className="ml-1">
-                      <MessageCircleHeart className="w-4 h-4" />
-                    </span>
-                    <p>form under construction. email me directly, please.</p>
-                  </h3>
-                </div>
-              </div>
-            </PinContainer>
-          </div>
+          <Link
+            href="#contact"
+            className="relative group/pin z-50 cursor-pointer"
+            onClick={openModal}
+          >
+            <PinContainer title="click to email me :)" />
+          </Link>
         )}
 
         <AnimatePresence>
@@ -78,7 +74,7 @@ const ContactForm: FC = () => {
               initial={{ scale: 0, rotate: -90 }}
               animate={{ scale: 1, rotate: 0 }}
               exit={{ scale: 0, rotate: 90 }}
-              className="fixed top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 lg:w-[1/2] md:w-[2/3] w-[2.5/3] bg-red-300 rounded-3xl p-6 shadow-lg z-50 flex flex-col justify-center items-center"
+              className="pointer-events-auto fixed top-1/4 left-[15%] -translate-x-1/2 -translate-y-1/2 w-[70%] bg-red-300 rounded-3xl p-6 shadow-lg z-50 flex flex-col justify-center items-center"
             >
               <form
                 onSubmit={handleSubmit(onSubmit)}
@@ -123,7 +119,7 @@ const ContactForm: FC = () => {
                 </div>
               </form>
               <Button
-                onClick={() => setIsOpen(false)}
+                onClick={closeModal}
                 className="absolute -top-3 -right-3 rounded-full bg-red-500 hover:bg-red-600 text-white p-3.5"
               >
                 X
@@ -132,13 +128,15 @@ const ContactForm: FC = () => {
           )}
         </AnimatePresence>
 
+        {/* dimmed background to focus user attention on modal */}
         {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black bg-opacity-50 z-40"
-            onClick={() => setIsOpen(false)}
+            // close backdrop when modal clicked
+            onClick={closeModal}
           ></motion.div>
         )}
       </main>

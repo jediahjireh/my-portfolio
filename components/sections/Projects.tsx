@@ -155,12 +155,10 @@ export default function Projects() {
         </Spotlight>
         <div className="flex justify-center items-center mb-10">
           <blockquote className="bg-transparent text-white border-l-4 border-gray-800 pl-6 italic">
-            <Spotlight>
-              <p className="sm:text-lg md:text-xl text-base">
-                “Talk is cheap. Show me the code.”
-                <br />― Linus Torvalds
-              </p>
-            </Spotlight>
+            <p className="sm:text-lg md:text-xl text-base">
+              “Talk is cheap. Show me the code.”
+              <br />― Linus Torvalds
+            </p>
           </blockquote>
         </div>
       </header>
