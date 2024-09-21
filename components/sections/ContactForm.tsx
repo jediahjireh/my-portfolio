@@ -84,13 +84,12 @@ const ContactForm: FC = () => {
 
       <main className="z-10">
         {!isOpen && (
-          <Link
-            href="#contact"
+          <nav
             className="relative group/pin z-50 cursor-pointer"
             onClick={openModal}
           >
             <PinContainer title="click to email me :)" />
-          </Link>
+          </nav>
         )}
 
         <AnimatePresence>
