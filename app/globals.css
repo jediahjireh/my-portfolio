@@ -90,3 +90,9 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* perspective and transform for ripple effect */
+.ripple-container {
+  perspective: 1000px;
+  transform: rotateX(75deg) translateZ(0);
+}

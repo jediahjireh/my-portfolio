@@ -1,14 +1,11 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 export const PinContainer = ({
-  children,
   title,
   href,
-  className,
   containerClassName,
 }: {
   children: React.ReactNode;
@@ -17,10 +14,6 @@ export const PinContainer = ({
   className?: string;
   containerClassName?: string;
 }) => {
-  const [transform, setTransform] = useState(
-    "translate(-50%,-50%) rotateX(0deg)"
-  );
-
   return (
     <Link
       className={cn(
@@ -61,13 +54,7 @@ export const PinPerspective = ({
         </div>
 
         {/* ripple effect animation */}
-        <div
-          style={{
-            perspective: "1000px",
-            transform: "rotateX(70deg) translateZ(0)",
-          }}
-          className="absolute left-1/2 top-1/2 ml-[0.09375rem] mt-4 -translate-x-1/2 -translate-y-1/2"
-        >
+        <div className="absolute left-1/2 top-1/2 ml-[0.09375rem] mt-4 -translate-x-1/2 -translate-y-1/2 ripple-container">
           <>
             {/* ripple 1 */}
             <motion.div
