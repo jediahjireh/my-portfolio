@@ -21,15 +21,21 @@ export type FormData = {
 };
 
 const ContactForm: FC = () => {
-  const { register, handleSubmit, reset } = useForm<FormData>();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+    trigger,
+  } = useForm<FormData>();
   const [isOpen, setIsOpen] = useState(false);
   const [fireConfetti, setFireConfetti] = useState<boolean>(false);
 
-  // define functions to handle modal state
+  // modal state
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
 
-  // handle form submission using sendEmail
+  // form submission using sendEmail
   const onSubmit = async (data: FormData) => {
     const result = await sendEmail(data);
 
@@ -44,6 +50,25 @@ const ContactForm: FC = () => {
     } else {
       toast.error("Message could not be sent. Please retry :(");
       console.log(result.message);
+    }
+  };
+
+  // form validation
+  const handleValidation = async () => {
+    const isValid = await trigger();
+    if (!isValid) {
+      // display error messages as toast notifications
+      if (errors.name) {
+        toast.error(errors.name.message || "Please enter a valid name");
+      }
+      if (errors.email) {
+        toast.error(
+          errors.email.message || "Please enter a valid email address"
+        );
+      }
+      if (errors.message) {
+        toast.error(errors.message.message || "Please enter a valid message");
+      }
     }
   };
 
@@ -95,23 +120,44 @@ const ContactForm: FC = () => {
                   </div>
                   <Input
                     placeholder="Full Name"
+                    autoComplete="given-name"
                     className="bg-white"
-                    {...register("name", { required: true })}
+                    {...register("name", {
+                      required: "Name is required",
+                      minLength: {
+                        value: 2,
+                        message: "Name must be at least 2 characters",
+                      },
+                    })}
                   />
                   <Input
                     type="email"
+                    autoComplete="email"
                     placeholder="Email"
                     className="bg-white"
-                    {...register("email", { required: true })}
+                    {...register("email", {
+                      required: "Email is required",
+                      pattern: {
+                        value: /^\S+@\S+$/i,
+                        message: "Invalid email format",
+                      },
+                    })}
                   />
                   <Textarea
                     placeholder="Message"
                     rows={4}
                     className="bg-white"
-                    {...register("message", { required: true })}
+                    {...register("message", {
+                      required: "Message is required",
+                      minLength: {
+                        value: 5,
+                        message: "Message must be at least 5 characters",
+                      },
+                    })}
                   />
                   <Button
                     type="submit"
+                    onClick={handleValidation}
                     className="w-full bg-red-500 hover:bg-red-600 text-white py-2 text-lg"
                   >
                     Send
