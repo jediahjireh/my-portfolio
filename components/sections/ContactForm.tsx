@@ -12,7 +12,8 @@ import { PinContainer } from "../ui/3d-pin";
 import Spotlight from "../containers/Spotlight";
 import Confetti from "../ui/Confetti";
 import toast from "react-hot-toast";
-import Link from "next/link";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 export type FormData = {
   name: string;
@@ -20,14 +21,22 @@ export type FormData = {
   message: string;
 };
 
+const schema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Invalid email format"),
+  message: z.string().min(5, "Message must be at least 5 characters"),
+});
+
 const ContactForm: FC = () => {
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-    trigger,
-  } = useForm<FormData>();
+  } = useForm<FormData>({
+    resolver: zodResolver(schema),
+  });
+
   const [isOpen, setIsOpen] = useState(false);
   const [fireConfetti, setFireConfetti] = useState<boolean>(false);
 
@@ -50,25 +59,6 @@ const ContactForm: FC = () => {
     } else {
       toast.error("Message could not be sent. Please retry :(");
       console.log(result.message);
-    }
-  };
-
-  // form validation
-  const handleValidation = async () => {
-    const isValid = await trigger();
-    if (!isValid) {
-      // display error messages as toast notifications
-      if (errors.name) {
-        toast.error(errors.name.message || "Please enter a valid name");
-      }
-      if (errors.email) {
-        toast.error(
-          errors.email.message || "Please enter a valid email address"
-        );
-      }
-      if (errors.message) {
-        toast.error(errors.message.message || "Please enter a valid message");
-      }
     }
   };
 
@@ -121,42 +111,38 @@ const ContactForm: FC = () => {
                     placeholder="Full Name"
                     autoComplete="given-name"
                     className="bg-white"
-                    {...register("name", {
-                      required: "Name is required",
-                      minLength: {
-                        value: 2,
-                        message: "Name must be at least 2 characters",
-                      },
-                    })}
+                    {...register("name")}
                   />
+                  {errors.name && (
+                    <span className="text-red-700 text-sm p-2">
+                      {errors.name.message}
+                    </span>
+                  )}
                   <Input
                     type="email"
                     autoComplete="email"
                     placeholder="Email"
                     className="bg-white"
-                    {...register("email", {
-                      required: "Email is required",
-                      pattern: {
-                        value: /^\S+@\S+$/i,
-                        message: "Invalid email format",
-                      },
-                    })}
+                    {...register("email")}
                   />
+                  {errors.email && (
+                    <span className="text-red-700 text-sm p-2">
+                      {errors.email.message}
+                    </span>
+                  )}
                   <Textarea
                     placeholder="Message"
                     rows={4}
                     className="bg-white"
-                    {...register("message", {
-                      required: "Message is required",
-                      minLength: {
-                        value: 5,
-                        message: "Message must be at least 5 characters",
-                      },
-                    })}
+                    {...register("message")}
                   />
+                  {errors.message && (
+                    <span className="text-red-700 text-sm p-2">
+                      {errors.message.message}
+                    </span>
+                  )}
                   <Button
                     type="submit"
-                    onClick={handleValidation}
                     className="w-full bg-red-500 hover:bg-red-600 text-white py-2 text-lg"
                   >
                     Send
