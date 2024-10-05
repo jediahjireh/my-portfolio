@@ -42,20 +42,19 @@ const projects: Project[] = [
   },
   {
     id: 3,
+    title: "Product Management System",
+    description:
+      "Grace & Garments is a full-stack online storefront built with Angular (frontend) and Node.js/Express (backend), also serving as a stylish product manager that functions seamlessly with full CRUD functionality. It features visually-pleasing product images customised in Canva, a RESTful API and JSON-based data storage.",
+    imageUrl: "/product-manager.png?height=200&width=300",
+    githubLink: " https://github.com/jediahjireh/product-management-system.git",
+  },
+  {
+    id: 4,
     title: "GitHub Explorer",
     description:
       "Created a full-stack web application that allows users to search for GitHub users and view their repositories. The application is built using React + Vite for the frontend and Express for the backend. It integrates with the GitHub API to fetch data. Features light and dark theme functionality, implemented through custom CSS styling.",
     imageUrl: "/github-explorer.png?height=200&width=300",
     githubLink: "https://github.com/jediahjireh/github-explorer.git",
-  },
-  {
-    id: 4,
-    title: "Soccer Chatbot",
-    description:
-      "A simple chatbot application that provides soccer-related responses using the Groq Cloud API. This application is customised to answer user questions about soccer, specifically tailored to fans of Liverpool Football Club.",
-    imageUrl: "/soccer-chatbot.png?height=200&width=300",
-    githubLink: "https://github.com/jediahjireh/chatbot-soccer.git",
-    demoLink: "https://chatbot-soccer.vercel.app",
   },
   {
     id: 5,
@@ -141,6 +140,34 @@ const projects: Project[] = [
     imageUrl: "/javascript-tutorial.png?height=200&width=300",
     githubLink: "https://github.com/jediahjireh/javascript-tutorial.git",
     demoLink: "https://jediahjireh.github.io/javascript-tutorial/",
+  },
+  {
+    id: 15,
+    title: "Soccer Chatbot",
+    description:
+      "A simple chatbot application that provides soccer-related responses using the Groq Cloud API. This application is customised to answer user questions about soccer, specifically tailored to fans of Liverpool Football Club.",
+    imageUrl: "/soccer-chatbot.png?height=200&width=300",
+    githubLink: "https://github.com/jediahjireh/chatbot-soccer.git",
+    demoLink: "https://chatbot-soccer.vercel.app",
+  },
+  {
+    id: 16,
+    title: "Pinkie Promise?",
+    description:
+      "The Pinkie Promise application allows users to make virtual pinkie promises through a fun drag-and-drop mechanic, featuring celebratory confetti and customisable styles. Built with React, Framer Motion and Tailwind CSS, it provides an interactive, animated experience for creating personal agreements. Users can personalise promises and enjoy smooth, dynamic animations.",
+    imageUrl: "/pinkie-promise.png?height=200&width=300",
+    githubLink: "https://github.com/jediahjireh/pinkie-promise.git",
+    demoLink: "https://pinkie-promise.netlify.app",
+  },
+
+  {
+    id: 17,
+    title: "QR Code Generator",
+    description:
+      "A QR Code generator built using Next.js allows users to input a link and generate a QR code, which can be downloaded or printed. It features client-side QR code generation, a responsive design and rotating placeholder text in the input field. Future enhancements include sharing QR codes via email and WhatsApp.",
+    imageUrl: "/qr-code-generator.png?height=200&width=300",
+    githubLink: "https://github.com/jediahjireh/qr-code-generator.git",
+    demoLink: "https://quick-response-code-generator.vercel.app",
   },
 ];
 
