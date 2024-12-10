@@ -13,6 +13,7 @@ export default function Skills() {
     "React.js",
     "HTML",
     "Express.js",
+    "Bootstrap",
     "SCSS",
     "Tailwind CSS",
     "PHP",
@@ -25,6 +26,9 @@ export default function Skills() {
     "Next.js",
     "TypeScript",
     "Prisma",
+    "Angular",
+    "Python",
+    "FastAPI"
   ];
 
   const writings = [
