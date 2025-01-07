@@ -28,7 +28,8 @@ export default function Skills() {
     "Prisma",
     "Angular",
     "Python",
-    "FastAPI"
+    "FastAPI",
+    "Remix"
   ];
 
   const writings = [
